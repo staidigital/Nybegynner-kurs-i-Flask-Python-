@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block tittel %}Ny spiller{% endblock %}
+
+{% block innhold %}
+    <h1>Legg til ny spiller</h1>
+
+    <form method="POST" action="{{ url_for('ny_spiller') }}">
+        <div>
+            <label for="navn">Navn:</label>
+            <input type="text" id="navn" name="navn" placeholder="F.eks. Ola Nordmann" required>
+        </div>
+        <div>
+            <label for="favorittspill">Favorittspill:</label>
+            <input type="text" id="favorittspill" name="favorittspill" placeholder="F.eks. Minecraft" required>
+        </div>
+        <button type="submit">Legg til</button>
+    </form>
+
+    <p><a href="{{ url_for('spillere') }}">Tilbake til spillerlisten</a></p>
+{% endblock %}

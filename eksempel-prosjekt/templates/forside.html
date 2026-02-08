@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block tittel %}Forsiden{% endblock %}
+
+{% block innhold %}
+    <h1>Velkommen til Flask-eksempelprosjektet!</h1>
+    <p>Dette prosjektet viser alt du laerer i Flask-kurset.</p>
+
+    <h2>Hva kan du proeve?</h2>
+    <ul>
+        <li><a href="/om">Om oss</a> - En enkel side med informasjon</li>
+        <li><a href="/hils/Ansen">Hils paa Ansen</a> - Dynamisk rute som tar imot navn</li>
+        <li><a href="/elever">Elever</a> - Eksempel paa for-lokke i maler</li>
+        <li><a href="/sok">Soek</a> - Eksempel paa skjema med GET/POST</li>
+        <li><a href="/gjestebok">Gjestebok</a> - Skjema som lagrer data i en liste</li>
+        <li><a href="/spillere">Spillere</a> - Skjema som lagrer data i MariaDB</li>
+    </ul>
+
+    <p>Proev ogsaa aa besoeke <code>/hils/DittNavn</code> i nettleseren for aa se dynamiske ruter i aksjon!</p>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block tittel %}Elever{% endblock %}
+
+{% block innhold %}
+    <h1>Elever</h1>
+    <p>Denne listen er generert med en <strong>for-lokke</strong> i Jinja2:</p>
+
+    <ul>
+        {% for elev in elever %}
+            <li>{{ elev }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>Listen sendes fra Python-koden til HTML-malen via <code>render_template()</code>.</p>
+{% endblock %}

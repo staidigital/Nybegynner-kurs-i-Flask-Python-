@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block tittel %}Min Flask-app{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Forside</a>
+        <a href="/om">Om oss</a>
+        <a href="/elever">Elever</a>
+        <a href="/sok">Soek</a>
+        <a href="/gjestebok">Gjestebok</a>
+        <a href="/spillere">Spillere</a>
+    </nav>
+
+    <main>
+        {% block innhold %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>Laget med Flask - Eksempelprosjekt fra Flask-kurset</p>
+    </footer>
+</body>
+</html>

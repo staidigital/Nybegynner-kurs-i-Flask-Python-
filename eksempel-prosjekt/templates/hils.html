@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block tittel %}Hilsen{% endblock %}
+
+{% block innhold %}
+    <h1>Hei, {{ navn }}!</h1>
+    <p>Denne siden bruker en <strong>dynamisk rute</strong>.</p>
+    <p>Proev aa endre navnet i URLen for aa se en annen hilsen!</p>
+    <p>For eksempel: <code>/hils/Kari</code> eller <code>/hils/Per</code></p>
+{% endblock %}

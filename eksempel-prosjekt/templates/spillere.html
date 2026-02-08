@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block tittel %}Spillere{% endblock %}
+
+{% block innhold %}
+    <h1>Spillere og favorittspill</h1>
+
+    <p><a href="{{ url_for('ny_spiller') }}" class="knapp">+ Legg til ny spiller</a></p>
+
+    {% if spillere %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>Favorittspill</th>
+                    <th>Handling</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for spiller in spillere %}
+                <tr>
+                    <td>{{ spiller.navn }}</td>
+                    <td>{{ spiller.favorittspill }}</td>
+                    <td>
+                        <a href="{{ url_for('slett_spiller', id=spiller.id) }}"
+                           onclick="return confirm('Er du sikker paa at du vil slette {{ spiller.navn }}?')"
+                           class="slett-lenke">
+                            Slett
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Ingen spillere registrert ennaa. Klikk "Legg til ny spiller" for aa komme i gang!</p>
+    {% endif %}
+
+    <p class="info">Denne siden bruker MariaDB-database, saa dataene blir lagret permanent.</p>
+{% endblock %}

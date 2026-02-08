@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block tittel %}Soek{% endblock %}
+
+{% block innhold %}
+    <h1>Soek</h1>
+
+    <form method="POST" action="/sok">
+        <div>
+            <label for="sokeord">Skriv inn et soekeord:</label>
+            <input type="text" id="sokeord" name="sokeord" required>
+        </div>
+        <button type="submit">Soek</button>
+    </form>
+
+    {% if resultat %}
+        <h2>Resultat</h2>
+        <p>Du soekte etter: <strong>{{ resultat }}</strong></p>
+    {% endif %}
+{% endblock %}

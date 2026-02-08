@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block tittel %}Gjestebok{% endblock %}
+
+{% block innhold %}
+    <h1>Gjestebok</h1>
+
+    <form method="POST" action="{{ url_for('ny_melding') }}">
+        <div>
+            <label for="navn">Navn:</label>
+            <input type="text" id="navn" name="navn" required>
+        </div>
+        <div>
+            <label for="melding">Melding:</label>
+            <textarea id="melding" name="melding" rows="3" required></textarea>
+        </div>
+        <button type="submit">Legg til</button>
+    </form>
+
+    <h2>Meldinger</h2>
+    {% if meldinger %}
+        {% for m in meldinger %}
+            <div class="melding">
+                <strong>{{ m.navn }}</strong>
+                <p>{{ m.melding }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Ingen meldinger ennaa. Vaer den forste!</p>
+    {% endif %}
+
+    <p class="info">Merk: Meldingene lagres i en Python-liste og forsvinner naar serveren stopper.
+    Se <a href="/spillere">Spillere</a>-siden for et eksempel med permanent lagring i MariaDB.</p>
+{% endblock %}
